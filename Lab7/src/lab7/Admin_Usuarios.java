@@ -53,11 +53,68 @@ public class Admin_Usuarios {
             bw = new BufferedWriter(fw);
             for (Usuarios s : lista) {
                 bw.write(s.getNombre() + ";");
-                bw.write(s.getApellido()+ ";");
-                bw.write(s.getCorreo()+ ";");
+                bw.write(s.getApellido() + ";");
+                bw.write(s.getCorreo() + ";");
                 bw.write(df.format(s.getFecha()) + ";");
-                bw.write(s.getPais()+ ";");
+                bw.write(s.getPais() + ";");
+                bw.write(s.getTelefono()+ ";");
                 bw.write(s.getContraseña() + ";");
+                for (Mensaje noleido : s.getNoleidos()) {
+                    bw.write(noleido.getCategoria() + "∙");
+                    bw.write(noleido.getReceptor() + "∙");
+                    bw.write(noleido.getEmisor() + "∙");
+                    bw.write(noleido.getAsunto()+ "∙");
+                    bw.write(noleido.getMensaje() + "∙");
+                }
+                for (Mensaje noleido : s.getLeidos()) {
+                    bw.write(noleido.getCategoria() + "°");
+                    bw.write(noleido.getReceptor() + "°");
+                    bw.write(noleido.getEmisor() + "°");
+                    bw.write(noleido.getAsunto()+ "°");
+                    bw.write(noleido.getMensaje() + "°");
+                }
+                for (Mensaje noleido : s.getNodeseados()) {
+                    bw.write(noleido.getCategoria() + "•");
+                    bw.write(noleido.getReceptor() + "•");
+                    bw.write(noleido.getEmisor() + "•");
+                    bw.write(noleido.getAsunto()+ "•");
+                    bw.write(noleido.getMensaje() + "•");
+                }
+                for (Mensaje noleido : s.getSpam()) {
+                    bw.write(noleido.getCategoria() + "○");
+                    bw.write(noleido.getReceptor() + "○");
+                    bw.write(noleido.getEmisor() + "○");
+                    bw.write(noleido.getAsunto()+ "○");
+                    bw.write(noleido.getMensaje() + "○");
+                }  
+                for (Mensaje noleido : s.getBorradores()) {
+                    bw.write(noleido.getCategoria() + "■");
+                    bw.write(noleido.getReceptor() + "■");
+                    bw.write(noleido.getEmisor() + "■");
+                    bw.write(noleido.getAsunto()+ "■");
+                    bw.write(noleido.getMensaje() + "■");
+                }  
+                for (Mensaje noleido : s.getEnviados()) {
+                    bw.write(noleido.getCategoria() + "◘");
+                    bw.write(noleido.getReceptor() + "◘");
+                    bw.write(noleido.getEmisor() + "◘");
+                    bw.write(noleido.getAsunto()+ "◘");
+                    bw.write(noleido.getMensaje() + "◘");
+                }  
+                for (Mensaje noleido : s.getEliminados()) {
+                    bw.write(noleido.getCategoria() + "◙");
+                    bw.write(noleido.getReceptor() + "◙");
+                    bw.write(noleido.getEmisor() + "◙");
+                    bw.write(noleido.getAsunto()+ "◙");
+                    bw.write(noleido.getMensaje() + "◙");
+                }  
+                for (Mensaje noleido : s.getImportantes()) {
+                    bw.write(noleido.getCategoria() + "☼");
+                    bw.write(noleido.getReceptor() + "☼");
+                    bw.write(noleido.getEmisor() + "☼");
+                    bw.write(noleido.getAsunto()+ "☼");
+                    bw.write(noleido.getMensaje() + "☼");
+                }  
             }
             bw.flush();
         } catch (Exception e) {

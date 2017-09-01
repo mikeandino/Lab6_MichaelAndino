@@ -19,6 +19,7 @@ public class Usuarios {
     private ArrayList<Mensaje> spam = new ArrayList();
     private ArrayList<Mensaje> borradores = new ArrayList();
     private ArrayList<Mensaje> enviados = new ArrayList();
+    private ArrayList<Mensaje> eliminados = new ArrayList();
     private ArrayList<Mensaje> importantes = new ArrayList();
 
     public Usuarios() {
@@ -136,6 +137,14 @@ public class Usuarios {
 
     public void setEnviados(ArrayList<Mensaje> enviados) {
         this.enviados = enviados;
+    }
+
+    public ArrayList<Mensaje> getEliminados() {
+        return eliminados;
+    }
+
+    public void setEliminados(ArrayList<Mensaje> eliminados) {
+        this.eliminados = eliminados;
     }
 
     public ArrayList<Mensaje> getImportantes() {
