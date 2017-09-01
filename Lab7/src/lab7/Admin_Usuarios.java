@@ -1,3 +1,5 @@
+package lab7;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,7 +12,7 @@ import java.util.Scanner;
 
 public class Admin_Usuarios {
 
-    private ArrayList<Usuarios> lista = null;
+    private ArrayList<Usuarios> lista = new ArrayList();
     private File f = null;
 
     public Admin_Usuarios() {
